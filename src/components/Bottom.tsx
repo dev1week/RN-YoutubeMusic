@@ -1,7 +1,7 @@
 import React from "react";
 import {Text, TouchableOpacity, View} from 'react-native';
-import { BOTTOM_HEIGHT } from "../utils";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { BOTTOM_HEIGHT } from "../../utils";
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 
 
@@ -18,8 +18,8 @@ export const Bottom:React.FC = () => {
     </View>
   </View>)
 }
-const BottomItem  = (props: { name: string; title: string }) =>{
-  console.log(props);
+const BottomItem:React.FC<BottomItemProps>  = (props) =>{
+
   return(
     <TouchableOpacity style={{alignItems:'center', flex:1}}>
       <View style={{marginVertical:4}}>
@@ -28,4 +28,9 @@ const BottomItem  = (props: { name: string; title: string }) =>{
       <Text style={{color:'white'}}>{props.title}</Text>
     </TouchableOpacity>
   )
+}
+
+interface BottomItemProps{
+  name: string;
+  title: string; 
 }
